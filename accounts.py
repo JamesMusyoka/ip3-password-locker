@@ -4,3 +4,5 @@ class account:
     '''
 
     pass
+
+    def __init__(self,account,user_name,email_aaddress):
