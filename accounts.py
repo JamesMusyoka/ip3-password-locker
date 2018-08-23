@@ -1,9 +1,9 @@
-class account:
+class Accounts:
     '''
     Class that generates details of accounts
     '''
 
-    acount_list = []
+    accounts_list = []
 
     def __init__(self,account,user_name,email_address,password):
 
