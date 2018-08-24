@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from accounts import Accounts
 
 
@@ -10,7 +11,6 @@ class TestAccounts(unittest.TestCase):
     Args:
         unittest.TestCase: Test case class that helps in creating test cases.
     '''
-
 
     def tearDown(self):
         '''
@@ -34,9 +34,6 @@ class TestAccounts(unittest.TestCase):
         self.assertEqual(self.new_accounts.username, "nanciekathini")
         self.assertEqual(self.new_accounts.password, "12ab")
 
-if __name__ == '__main__':
-    unittest.main()
-
     def test_save_accounts(self):
         '''
         test_save_accounts test case to test if the accounts object is saved into the accounts list.
@@ -44,30 +41,46 @@ if __name__ == '__main__':
         self.new_accounts.save_accounts()
         self.assertEqual(len(Accounts.accounts_list),1)
 
+    # def test_save_multiple_accounts(self):
+    #     '''
+    #     This is to test if we can save multiple objects to our accounts_list.
+    #     '''
+    #     self.new_accounts.save_accounts()
+    #     test_accounts = Accounts("Test", "user", "nanciekathini@gmail.com", "test@user.com")
+    #     test_accounts.save_accounts()
+    #     self.assertEqual(len(Accounts.accounts_list),2)
+
+    # def test_delete_accounts(self):
+    #     '''
+    #     This is to test if we can remove an account from our accounts list.
+    #     '''
+    #     self.new_accounts.save_accounts()
+    #     test_accounts = Accounts("Test", "user", "nanciekathini@gmail.com")
+    #     test_accounts.save_accounts()
+    #
+    #     self.new_accounts.delete_account()
+    #     self.assertEqual(len(Accounts.accounts_list),1)
+    # 
+    # def test_copy_username(self):
+    #     '''
+    #     Test to confirm that we're copying username from an account.
+    #     '''
+    #
+    #     self.new_accounts.save_accounts()
+    #     Accounts.copy_username("nanciekathini")
+    #
+    #     self.assertEqual(self.new_accounts.username, pyperclip.paste())
+    #
+    # def test_copy_email_address(self):
+    #     '''
+    #     Test to confirm that we are copying the email address from an account.
+    #     '''
+        #
+        # self.new_accounts.save.accounts()
+        # Accounts.copy_email_address("nanciekathini@gmail.com")
+        #
+        # self.assertEqual(self.new_account.email_address, pyperclip.paster())
+
+
 if __name__ == '__main__':
-    unittest.main()
-
-    def test_save_multiple_accounts(self):
-        '''
-        This is to test if we can save multiple objects to our accounts_list.
-        '''
-        self.new_accounts.save_accounts()
-        test_accounts = Accounts("Test", "user", "nanciekathini@gmail.com", "test@user.com")
-        test_accounts.save_accounts()
-        self.assertEqual(len(Accounts.accounts_list),2)
-
-if __name__ == '__main__':
-    unittest.main()
-
-    def test_delete_accounts(self):
-        '''
-        This is to testif we can remove an account from our accounts list.
-        '''
-        self.new_accounts.save_accounts()
-        test_accounts = Accounts("Test", "user", "nanciekathini@gmail.com")
-        test_accounts.save_accounts()
-
-        self.new_accounts.delete_account()
-        self.assertEqual(len(Accounts.accounts_list),1)
-    if __name__ == '__main__':
-        unittest.main()        
+            unittest.main()
