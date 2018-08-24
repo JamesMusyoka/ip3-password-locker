@@ -1,6 +1,7 @@
 import unittest
 from accounts import Accounts
 
+
 class TestAccounts(unittest.TestCase):
 
     '''
@@ -14,7 +15,7 @@ class TestAccounts(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_accounts = Accounts("Nancy", "Muthinzi", "nanciekathini@gmail.com", "nanciekathini", "12ab@#")
+        self.new_accounts = Accounts("Nancy", "Muthinzi", "nanciekathini@gmail.com", "nanciekathini", "12ab")
 
     def test_init(self):
         '''
@@ -24,7 +25,7 @@ class TestAccounts(unittest.TestCase):
         self.assertEqual(self.new_accounts.last_name, "Muthinzi")
         self.assertEqual(self.new_accounts.email_address, "nanciekathini@gmail.com")
         self.assertEqual(self.new_accounts.username, "nanciekathini")
-        self.assertEqual(self.new_accounts.password, "12ab@#")
+        self.assertEqual(self.new_accounts.password, "12ab")
 
 if __name__ == '__main__':
     unittest.main()
@@ -34,7 +35,14 @@ if __name__ == '__main__':
         test_save_accounts test case to test if the accounts object is saved into the accounts list.
         '''
         self.new_accounts.save_accounts()
-        self.assertEqual(len(Accounts.accounts_list)1)
+        self.assertEqual(len(Accounts.accounts_list),1)
 
 if __name__ == '__main__':
-    unnittest.main()        
+    unittest.main()
+
+    def test_save_multiple_accounts(self):
+        '''
+        This is to test if we can save multiple objects to our accounts_list.
+        '''
+        self.new_accounts.save_accounts()
+        test_accounts = Accounts("Test", "user", )
