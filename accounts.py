@@ -20,3 +20,11 @@ class Accounts:
         '''
 
         Accounts.accounts_list.append(self)
+
+    def delete_accounts(self):
+
+        '''
+        This method deletes a saved account from the accounts_list.
+        '''
+
+        Accounts.aaccounts_list.remove(self)
