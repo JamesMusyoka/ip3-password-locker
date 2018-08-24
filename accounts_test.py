@@ -9,3 +9,32 @@ class TestAccounts(unittest.TestCase):
     Args:
         unittest.TestCase: Test case class that helps in creating test cases.
     '''
+
+    def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
+        self.new_accounts = Accounts("Nancy", "Muthinzi", "nanciekathini@gmail.com", "nanciekathini", "12ab@#")
+
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_accounts.first_name, "Nancy")
+        self.assertEqual(self.new_accounts.last_name, "Muthinzi")
+        self.assertEqual(self.new_accounts.email_address, "nanciekathini@gmail.com")
+        self.assertEqual(self.new_accounts.username, "nanciekathini")
+        self.assertEqual(self.new_accounts.password, "12ab@#")
+
+if __name__ == '__main__':
+    unittest.main()
+
+    def test_save_accounts(self):
+        '''
+        test_save_accounts test case to test if the accounts object is saved into the accounts list.
+        '''
+        self.new_accounts.save_accounts()
+        self.assertEqual(len(Accounts.accounts_list)1)
+
+if __name__ == '__main__':
+    unnittest.main()        
