@@ -15,7 +15,6 @@ class User:
         self.email_address = email_address
 
     def save_user(self):
-
         '''
         This method saves user objects into the user_list.
         '''
@@ -23,7 +22,6 @@ class User:
         User.user_list.append(self)
 
     def delete_user(self):
-
         '''
         This method deletes a saved user from the user_list.
         '''
