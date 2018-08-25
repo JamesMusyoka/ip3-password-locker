@@ -22,7 +22,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com", "nanciekathini", "12ab")
+        self.new_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com")
 
     def test_init(self):
         '''
@@ -31,8 +31,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.first_name, "Nancy")
         self.assertEqual(self.new_user.last_name, "Muthinzi")
         self.assertEqual(self.new_user.email_address, "nanciekathini@gmail.com")
-        self.assertEqual(self.new_user.username, "nanciekathini")
-        self.assertEqual(self.new_user.password, "12ab")
 
     def test_save_user(self):
         '''
@@ -46,7 +44,7 @@ class TestUser(unittest.TestCase):
         This is to check if we can sve multiple user objects to our user_list.
         '''
         self.new_user.save_user()
-        test_user = User("Test", "user", "nanciekathini@gmail.com", "test@user.com")
+        test_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
