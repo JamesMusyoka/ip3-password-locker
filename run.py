@@ -4,7 +4,7 @@ def create_accounts(fname, lname, email, username, password):
     '''
     This function creates a new account.
     '''
-    new_accounts = Accounts(fname, lname, email, username, password):
+    new_accounts = Accounts(fname, lname, email, username, password)
     return new_accounts
 
 def save_accounts(accounts):
@@ -23,4 +23,4 @@ def display_accounts():
     '''
     This function returns all the saved accounts.
     '''
-    return Accounts.display_accounts()       
+    return Accounts.display_accounts()
