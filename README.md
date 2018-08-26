@@ -23,7 +23,6 @@ This is still a work in progress but for any issues encountered and any contribu
 
 ## TECHNOLOGIES USED
 - Python 3.6 language
-- Pyperclip
 - Markdown language
 
 ### LICENSE
