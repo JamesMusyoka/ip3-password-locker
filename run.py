@@ -1,26 +1,26 @@
-from accounts import Accounts
+from user import User
 
-def create_accounts(fname, lname, email, username, password):
+def create_user(fname, lname, email, username, password):
     '''
     This function creates a new account.
     '''
-    new_accounts = Accounts(fname, lname, email, username, password)
-    return new_accounts
+    new_user = User(fname, lname, email, username, password)
+    return new_user
 
-def save_accounts(accounts):
+def save_user(user):
     '''
     This function saves an account.
     '''
-    accounts.save_accounts()
+    user.save_user()
 
-def del_accounts(accounts):
+def del_user(user):
     '''
     This function deletes an account.
     '''
-    accounts.delete_accounts()
+    user.delete_user()
 
-def display_accounts():
+def display_user():
     '''
-    This function returns all the saved accounts.
+    This function returns all the saved user.
     '''
-    return Accounts.display_accounts()
+    return User.display_user()

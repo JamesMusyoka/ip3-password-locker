@@ -4,7 +4,6 @@ from user import User
 
 
 class TestUser(unittest.TestCase):
-
     '''
     This is a test subclass that defines test cases for the user class behaviours.
 
@@ -49,4 +48,4 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.user_list),2)
 
 if __name__ == '__main__':
-            unittest.main()
+    unittest.main()
