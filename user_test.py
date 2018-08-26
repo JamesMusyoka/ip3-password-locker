@@ -46,6 +46,7 @@ class TestUser(unittest.TestCase):
         test_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
+    
 
 if __name__ == '__main__':
     unittest.main()

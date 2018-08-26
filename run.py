@@ -1,4 +1,5 @@
 from user import User
+from credentials import Credentials
 
 def create_user(fname, lname, email, username, password):
     '''
@@ -13,7 +14,7 @@ def save_user(user):
     '''
     user.save_user()
 
-def del_user(user):
+def delete_user(user):
     '''
     This function deletes an account.
     '''

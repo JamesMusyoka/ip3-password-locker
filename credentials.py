@@ -1,3 +1,6 @@
+import string
+import random
+
 class Credentials:
     '''
     Class that generates new instances of credentials.
@@ -16,7 +19,7 @@ class Credentials:
 
     def save_credentials(self):
         '''
-        This methods saves credential objects into the credentials_list.
+        This methods save credential objects into the credentials_list.
         '''
 
         Credentials.credentials_list.append(self)
@@ -25,5 +28,11 @@ class Credentials:
         '''
         This method deletes saved credentials from the credentials_list.
         '''
-        
+
         Credentials.credentials_list.remove(self)
+
+    def password_generator(size=8, chars=string.ascii_letters + string.digits):
+        '''
+        This method generates a password by returning a string of random characters.
+        '''
+        return ''.join(random.choice(chars) for i in range(size))
