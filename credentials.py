@@ -31,7 +31,7 @@ class Credentials:
 
         Credentials.credentials_list.remove(self)
 
-    def password_generator(size=8, chars=string.ascii_letters + string.digits):
+    def password_generator(self, size=8, chars=string.ascii_letters + string.digits):
         '''
         This method generates a password by returning a string of random characters.
         '''
