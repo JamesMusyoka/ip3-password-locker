@@ -46,7 +46,42 @@ class TestUser(unittest.TestCase):
         test_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-    
+
+    def test_delete_ser(self):
+        '''
+        This is to test if we can remove a user from our user list.
+        '''
+        self.new_user.save_user()
+        test_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com", "nanciekathini")
+        test_user.save_user()
+
+        self.new_user.delete_user(
+        self.assertEqual(len(User.user_list),1)
+        )
+
+    def test_find_user_by_email(self):
+        '''
+        This is to check if we can find a user by email and display information.
+        '''
+        self.new_user.save_user()
+        test_user = User("Nancy", "Muthinzi", "nanciekathini@gmail.com", "nanciekathini")
+        test_user.save_user()
+
+        found_user = User.find_by_email("nanciekathini@gmail.com")
+        self.assertEqual(found_user.email, test_user.email)
+
+    def test_user_exists(self):
+        '''
+        This is to see if we can return a Boolean if we cannor find a user.
+        '''
+
+        self.new_user.save_user()
+        test_user = User("Nancy", "Muthinzi", "nanciekathini", "nanciekathini@gmail.com")
+        test_user.save_user()
+
+        user_exists = User.user_exist("nanciekathini@gmail.com")
+
+        self.assertTrue(user_exists)    
 
 if __name__ == '__main__':
     unittest.main()
