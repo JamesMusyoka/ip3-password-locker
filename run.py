@@ -2,6 +2,7 @@ from user import User
 from credentials import Credentials
 import pyperclip
 
+# function 1
 def create_user(fname, lname, email, username, password):
     '''
     This function creates a new account.
@@ -9,36 +10,35 @@ def create_user(fname, lname, email, username, password):
     new_user = User(fname, lname, email, username, password)
     return new_user
 
+#function 2
 def save_user(user):
     '''
     This function saves an account.
     '''
     user.save_user()
 
+# function 3
 def delete_user(user):
     '''
     This function deletes an account.
     '''
     user.delete_user()
 
-def display_user():
-    '''
-    This function returns all the saved user.
-    '''
-    return User.display_user()
-
+# function 4
 def find_user(email):
     '''
     This function finds a user by their email address.
     '''
     return User.find_by_email(email)
 
+#funnction 5
 def check_existing_user(email):
     '''
     This function checks if a user exists with that email and returns a Boolean.
     '''
     return User.user_exist(email)
 
+# function 6
 def display_users():
     '''
     This function returns all saved users.
@@ -46,7 +46,7 @@ def display_users():
     return User.display_users()
 
 def main():
-    print("Hello, welcome to your user list. What is your name?")
+    print("Hello, welcome to your user data list. What is your name?")
 
     user_name = input()
     print("")
@@ -55,11 +55,11 @@ def main():
     print("\n")
 
     while True:
-            print("Use these short codes : ca - create new user, dc - display users, fa - find user, ex - exit ")
+            print("Use these short codes : cu - create new user data, du - display user data, fu - find user data, ex - exit ")
 
             short_code = input().lower()
 
-            if short_code == 'ca':
+            if short_code == 'cu':
                     print("New User")
                     print("-"*10)
 
@@ -81,10 +81,10 @@ def main():
                     print("New User {f_name} {l_name} created")
                     print ('\n')
 
-            elif short_code == 'da':
+            elif short_code == 'du':
 
                     if display_user():
-                            print("Here is a list of all your users")
+                            print("Here is a list of all your user data")
                             print('\n')
 
                             for user in display_user():
@@ -93,10 +93,10 @@ def main():
                             print('\n')
                     else:
                             print('\n')
-                            print("You dont seem to have any users saved yet")
+                            print("You dont seem to have any user data saved yet")
                             print('\n')
 
-            elif short_code == 'fa':
+            elif short_code == 'fu':
 
                     print("Enter the email you want to search for")
 
@@ -109,7 +109,7 @@ def main():
                             print("Username.......{search_user.username}")
                             print("Email address.......{search_user.email}")
                     else:
-                            print("That user does not exist")
+                            print("That user data does not exist")
 
             elif short_code == "ex":
                     print("Bye .......")

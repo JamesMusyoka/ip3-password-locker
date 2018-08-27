@@ -63,3 +63,9 @@ class User:
 #                 return True
 #
 #             return False
+#
+# @classmethod
+#     def copy_email(cls, username):
+#         user_found = User.find_by_username(username)
+#         pyperclip.copy(user_found.email)
+#
