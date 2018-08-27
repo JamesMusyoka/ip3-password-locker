@@ -32,77 +32,82 @@ def find_user(email):
     '''
     return User.find_by_email(email)
 
+def check_existing_user(email):
+    '''
+    This function checks if a user exists with that email and returns a Boolean.
+    '''
+
 def main():
     print("Hello, welcome to your user list. What is your name?")
 
     user_name = input()
+    print("")
 
-        print(f"Hello {user_name}. What would you like to do?)
-        print('\n')
+    print("Hello {user_name}. What would you like to do?")
+    print("\n")
 
-        while true:
-            print("Use these short codes : ca - create new account, dc - display accounts, fa - find account, ex - exit ")
+    while True:
+            print("Use these short codes : ca - create new user, dc - display users, fa - find user, ex - exit ")
 
             short_code = input().lower()
 
-                    if short_code == 'ca':
-                            print("New Account")
-                            print("-"*10)
+            if short_code == 'ca':
+                    print("New User")
+                    print("-"*10)
 
-                            print ("First name ....")
-                            f_name = input()
+                    print ("First name ....")
+                    f_name = input()
 
-                            print("Last name ...")
-                            l_name = input()
+                    print("Last name ...")
+                    l_name = input()
 
-                            print("Username ...")
-                            u_name = input()
+                    print("Username ...")
+                    u_name = input()
 
-                            print("Email address ...")
-                            e_address = input()
+                    print("Email address ...")
+                    e_address = input()
 
 
-                            save_accounts(create_account(f_name,l_name,u_name,e_address))
-                            print ('\n')
-                            print(f"New Account {f_name} {l_name} created")
-                            print ('\n')
+                    save_user(create_user(f_name,l_name,u_name,e_address))
+                    print ('\n')
+                    print("New User {f_name} {l_name} created")
+                    print ('\n')
 
-                    elif short_code == 'da':
+            elif short_code == 'da':
 
-                            if display_accounts():
-                                    print("Here is a list of all your accounts")
-                                    print('\n')
+                    if display_user():
+                            print("Here is a list of all your users")
+                            print('\n')
 
-                                    for account in display_accounts():
-                                            print(f"{contact.first_name} {contact.last_name} .....{contact.username}")
+                            for user in display_user():
+                                    print("{user.first_name} {user.last_name} .....{user.username}")
 
-                                    print('\n')
-                            else:
-                                    print('\n')
-                                    print("You dont seem to have any accounts saved yet")
-                                    print('\n')
-
-                    elif short_code == 'fa':
-
-                            print("Enter the email you want to search for")
-
-                            search_email = input()
-                            if check_existing_contacts(search_email):
-                                    search_contact = find_contact(search_email)
-                                    print(f"{search_contact.first_name} {search_contact.last_name}")
-                                    print('-' * 20)
-
-                                    print(f"Username.......{search_account.username}")
-                                    print(f"Email address.......{search_contact.email}")
-                            else:
-                                    print("That account does not exist")
-
-                    elif short_code == "ex":
-                            print("Bye .......")
-                            break
+                            print('\n')
                     else:
-                            print("I really didn't get that. Please use the short codes")
+                            print('\n')
+                            print("You dont seem to have any users saved yet")
+                            print('\n')
 
-if __name__ == '__main__'
+            elif short_code == 'fa':
 
+                    print("Enter the email you want to search for")
+
+                    search_email = input()
+                    if check_existing_user(search_email):
+                            search_user = find_user(search_email)
+                            print("{search_user.first_name} {search_user.last_name}")
+                            print('-' * 20)
+
+                            print("Username.......{search_user.username}")
+                            print("Email address.......{search_user.email}")
+                    else:
+                            print("That user does not exist")
+
+            elif short_code == "ex":
+                    print("Bye .......")
+                    break
+            else:
+                    print("I really didn't get that. Please use the short codes")
+
+if __name__ == '__main__':
     main()
