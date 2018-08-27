@@ -1,5 +1,6 @@
 from user import User
 from credentials import Credentials
+import pyperclip
 
 def create_user(fname, lname, email, username, password):
     '''
@@ -68,7 +69,7 @@ def main():
                     e_address = input()
 
 
-                    save_user(create_user(f_name,l_name,u_name,e_address))
+                    save_user(create_user())
                     print ('\n')
                     print("New User {f_name} {l_name} created")
                     print ('\n')
