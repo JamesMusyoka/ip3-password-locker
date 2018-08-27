@@ -37,6 +37,13 @@ def check_existing_user(email):
     '''
     This function checks if a user exists with that email and returns a Boolean.
     '''
+    return User.user_exist(email)
+
+def display_users():
+    '''
+    This function returns all saved users.
+    '''
+    return User.display_users()
 
 def main():
     print("Hello, welcome to your user list. What is your name?")
