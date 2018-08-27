@@ -62,4 +62,4 @@ class User:
             if user_email_address == email:
                 return True
 
-            return False    
+            return False
