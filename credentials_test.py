@@ -10,6 +10,19 @@ class TestCredentials(unittest.TestCase):
     unittest.TestCase: TestCase class that helps in creating test cases.
     '''
 
+def tearDown(self):
+    '''
+    This method does clean up after each test has run.
+    '''
+    Credentials.credentials_list = []
+
+def setUp(self):
+    '''
+    Set up method to run before each test cases.
+    '''
+    self.new_credentials = Credentials("Nancy", "Muthinzi", "nanciekathini@gmail.com")
+
+
 def test_init(self):
     '''
     This test tests if an object is initialized properly.

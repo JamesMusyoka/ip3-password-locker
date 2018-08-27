@@ -33,9 +33,9 @@ def find_user(email):
     return User.find_by_email(email)
 
 def main():
-    print("Hello, welcome to your accounts list. What is your name?")
+    print("Hello, welcome to your user list. What is your name?")
 
-        accounts_list = input()
+    user_name = input()
 
         print(f"Hello {user_name}. What would you like to do?)
         print('\n')
