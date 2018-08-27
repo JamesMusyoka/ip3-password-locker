@@ -32,34 +32,34 @@ class User:
 
         User.user_list.remove(self)
 
-@classmethod
-    def find_by_email_address(cls, email_address):
-        '''
-        This method takes an email and returns user data that matches the email.
+# @classmethod
+#     def find_by_email_address(cls, email_address):
+#         '''
+#         This method takes an email and returns user data that matches the email.
+#
+#         Args:
+#             email: email address to search
+#         Returns:
+#             user information
+#         '''
+#
+#         for user in cls.user_list:
+#             if user.email_address == email:
+#                 return user
 
-        Args:
-            email: email address to search
-        Returns:
-            user information
-        '''
-
-        for user in cls.user_list:
-            if user.email_address == email:
-                return user
-
-@classmethod
-    def user_exists(cls,email):
-        '''
-        This method checks if user exists from list.
-
-        Args:
-        email: email address to search if it exists.
-        Returns:
-        True or false depending on if it exists.
-        '''
-
-        for user in cls.user_list:
-            if user_email_address == email:
-                return True
-
-            return False
+# @classmethod
+#     def user_exists(cls,email):
+#         '''
+#         This method checks if user exists from list.
+#
+#         Args:
+#         email: email address to search if it exists.
+#         Returns:
+#         True or false depending on if it exists.
+#         '''
+#
+#         for user in cls.user_list:
+#             if user_email_address == email:
+#                 return True
+#
+#             return False
