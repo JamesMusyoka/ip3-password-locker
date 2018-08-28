@@ -2,8 +2,7 @@ from user import User
 from credentials import Credentials
 import pyperclip
 
-
-# function 1
+# user data:
 def create_user(fname, lname, email, username, password):
     '''
     This function creates a new account.
@@ -11,40 +10,30 @@ def create_user(fname, lname, email, username, password):
     new_user = User(fname, lname, email, username, password)
     return new_user
 
-
-# function 2
 def save_user(user):
     '''
     This function saves an account.
     '''
     user.save_user()
 
-
-# function 3
 def delete_user(user):
     '''
     This function deletes an account.
     '''
     user.delete_user()
 
-
-# function 4
 def find_user(email):
     '''
     This function finds a user by their email address.
     '''
     return User.find_by_email(email)
 
-
-# function 5
 def check_existing_user(email):
     '''
     This function checks if a user exists with that email and returns a Boolean.
     '''
     return User.user_exist(email)
 
-
-# function 6
 def display_users():
     '''
     This function returns all saved users.
@@ -56,6 +45,21 @@ def user_exists(email):
     This functions is to check if a user exists.
     '''
     return User.check_existing_user(email)
+
+# credentials:
+def create_credentials(account, username, password):
+    new_credentials = Credentials(account, username, password)
+    return new_credentials
+
+def save_credentials(credentials):
+    credentials.save_credentials
+
+def test_save_multiple_credentials(credentials):
+    credentials.test_save_multiple_credentials
+
+def delete_credentials(credentials):
+    credentials.delete_credentials
+
 
 
 def main():

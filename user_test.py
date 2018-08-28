@@ -88,15 +88,15 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(user_exists)
 
-    # def test_copy_email(self):
+    # def test_copy_email_address(self):
     #     '''
     #     Test to confirm we're copying email address on user data.
     #     '''
     #
     #     self.new_user.save_user()
-    #     User.copy_email("nanciekathini")
+    #     User.copy_email_address("nancikathini@gmail.com")
     #
-    #     self.assertEqual(self.new_user.email, pyperclip.paste())
+    #     self.assertEqual(self.new_user.email_address, pyperclip.paste())
 
 
 if __name__ == '__main__':

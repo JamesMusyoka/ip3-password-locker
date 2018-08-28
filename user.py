@@ -1,4 +1,4 @@
-# import pyperclip
+import pyperclip
 
 class User:
     '''
@@ -65,6 +65,6 @@ class User:
             return False
 
     # @classmethod
-    # def copy_email(cls, username):
-    #     user_found = User.find_by_username(username)
-    #     pyperclip.copy(user_found.email)
+    # def copy_email_address(cls, email_address):
+    #     user_found = User.find_by_email_address(email_address)
+    #     pyperclip.copy(user_found.email_address)
