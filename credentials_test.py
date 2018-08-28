@@ -20,7 +20,7 @@ def setUp(self):
     '''
     Set up method to run before each test cases.
     '''
-    self.new_credentials = Credentials("Nancy", "Muthinzi", "nanciekathini@gmail.com")
+    self.new_credentials = Credentials("Nancy", "Muthinzi", "nanciekathini@gmail.com", "ab12")
 
 
 def test_init(self):
@@ -39,6 +39,26 @@ def test_save_credentials(self):
     self.new_credentials.save_credentials()
     self.assertEqual(len(Credentials.credentials_list),1)
 
+def test_save_multiple_credentials(self):
+    '''
+    Test to see if multiple credentials can be saved.
+    '''
+
+    self.new_credentials.save_credentials()
+    test_credentials = Credentials('test.com', 'testaccount', 'testusername', 'testpassword')
+    test_credentials.save_credentials()
+    self.assertEqual(len(Credentials.credentials_list), 2)
+
+def test_delete_credentials(self):
+    '''
+    test to see if credentials can be deleted.
+    '''
+
+    self.new_credentials.save_credential()
+    test_credentials = Credentials('test.com', 'testaccount', 'testusername', 'testpassword')
+    test_credentials.save_credentials()
+    self.new_credentials.delete_credentials()
+    self.assertEqual(len(Credentials.credentials_list), 1)
 
 if __name__ == '__main__':
     unittest.main()
